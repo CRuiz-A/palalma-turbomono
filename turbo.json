@@ -4,15 +4,32 @@
   "tasks": {
     "build": {
       "dependsOn": ["^build"],
-      "inputs": ["$TURBO_DEFAULT$", ".env*"],
-      "outputs": [".next/**", "!.next/cache/**"]
+      "inputs": [
+        "$TURBO_DEFAULT$",
+        ".env*",
+        "content/**",
+        "contentlayer.config.js"
+      ],
+      "outputs": [
+        ".next/**",
+        ".contentlayer/**",
+        "dist/**",
+        "!.next/cache/**"
+      ],
+      "env": ["CONTENTLAYER_DEBUG"]
     },
     "lint": {
-      "dependsOn": ["^lint"]
+      "dependsOn": ["^lint"],
+      "outputs": []
     },
     "dev": {
       "cache": false,
-      "persistent": true
+      "persistent": true,
+      "env": ["CONTENTLAYER_DEBUG"]
     }
-  }
+  },
+  "globalEnv": [
+    "NODE_ENV",
+    "CONTENTLAYER_DEBUG"
+  ]
 }

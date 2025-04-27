@@ -22,6 +22,7 @@ export default function LoginPage() {
 
     try {
       const loginData = {
+        username: email,
         email,
         password,
       };
