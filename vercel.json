@@ -2,8 +2,9 @@
   "version": 2,
   "builds": [
     {
-      "src": "apps/web/.next",
-      "use": "@vercel/static-build"
+      "src": "package.json",
+      "use": "@vercel/static-build",
+      "config": { "outputDirectory": "apps/web/.next" }
     },
     {
       "src": "apps/api/dist/main.js",
@@ -11,7 +12,7 @@
     }
   ],
   "rewrites": [
-    { "source": "/api/(.*)", "destination": "/api/main" },
+    { "source": "/api/(.*)", "destination": "/api" },
     { "source": "(.*)", "destination": "/index.html" }
   ]
 }
