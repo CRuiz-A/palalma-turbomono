@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "apps/web/.next",
+      "use": "@vercel/static-build"
+    },
+    {
+      "src": "apps/api/dist/main.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "rewrites": [
+    { "source": "/api/(.*)", "destination": "/api/main" },
+    { "source": "(.*)", "destination": "/index.html" }
+  ]
+}
