@@ -16,7 +16,18 @@
         "dist/**",
         "!.next/cache/**"
       ],
-      "env": ["CONTENTLAYER_DEBUG"]
+      "env": [
+        "CONTENTLAYER_DEBUG",
+        "POSTGRES_URL",
+        "POSTGRES_PRISMA_URL",
+        "SUPABASE_URL",
+        "POSTGRES_USER",
+        "POSTGRES_PASSWORD",
+        "POSTGRES_DATABASE",
+        "SUPABASE_SERVICE_ROLE_KEY",
+        "POSTGRES_HOST",
+        "SUPABASE_ANON_KEY"
+      ]
     },
     "lint": {
       "dependsOn": ["^lint"],
